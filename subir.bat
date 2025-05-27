@@ -1,1 +1,17 @@
-@echo offchcp 65001REM Batch de apoio aos Alunos de Java Fundamentas - Senai BauruREM Author: Richard BroslerREM Version: 2025-05-21set turma=n25-java1-01set dirgit=%APPDATA%\..\Local\Programs\Gitset /p comentario=Digite o coment??rio para fechar a vers??o de dados: cd %USERPROFILE%\Documents\%turma%\echo Adicionando arquivos ?? vers??o..."%dirgit%\bin\git.exe" add .echo Fechando a vers??o..."%dirgit%\bin\git.exe" commit -m "%comentario%"echo Enviando para o servidor do GitHub...echo Aten????o ?? autentica????o, ser?? solicitado..."%dirgit%\bin\git.exe" pushpause
+@echo off
+chcp 65001
+REM Batch de apoio aos Alunos de Java Fundamentas - Senai Bauru
+REM Author: Richard Brosler
+REM Version: 2025-05-21
+set turma=n25-java1-01
+set dirgit=%APPDATA%\..\Local\Programs\Git
+set /p comentario=Digite o comentário para fechar a versão de dados: 
+cd %USERPROFILE%\Documents\%turma%\
+echo Adicionando arquivos à versão...
+"%dirgit%\bin\git.exe" add .
+echo Fechando a versão...
+"%dirgit%\bin\git.exe" commit -m "%comentario%"
+echo Enviando para o servidor do GitHub...
+echo Atenção à autenticação, será solicitado...
+"%dirgit%\bin\git.exe" push
+pause
