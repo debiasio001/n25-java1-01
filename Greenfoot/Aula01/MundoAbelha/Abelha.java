@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.GreenfootImage;
 
 /**
  * está é uma açao que representara a abelha 
@@ -9,9 +10,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Abelha extends Actor
 {
     //definindo os fields
-    int vidas;
-    int score;
-    int PONTOS = 100;
+    private int vidas;
+    private int score;
+    private int PONTOS = 100;
+    private int indice;
+    private GreenfootImage imgs[];
     //definindo o construtctor
     /**
      * constructor da Classe Abelha
@@ -19,7 +22,15 @@ public class Abelha extends Actor
     public Abelha(){
         vidas = 3; //vai ter 3 vidas
         score = 0; 
+        //GreenfootImage img = new GreenfootImage("bee01.png");
+        //setImage(img);
+        indice = 0;
+        imgs = new GreenfootImage[4];//definindo vetor de 4 posições
+    for (int i=0; i<4 ; i++){
+        imgs[i] = new GreenfootImage("bee0" + (i+1) + ".png");   
     }
+    setImage(imgs[indice]);
+}
     /**
      * Act - do whatever the Abelha wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,6 +48,7 @@ public class Abelha extends Actor
         verificarPosicao();
         capturarMosca();
         serCapturadoPelaAranha();
+        animarAbelha();
     }
     /**
      * Método verifica posicao
@@ -98,7 +110,8 @@ public class Abelha extends Actor
             //vai de 1 a 600
             int posY = Greenfoot.getRandomNumber(getWorld().getHeight())+1;
             //criando a mosca
-            Mosca mosca = new Mosca();
+            Mosca mosca = new Mosca(Greenfoot.getRandomNumber(3)+1,
+            Greenfoot.getRandomNumber(360));
             //colocando no mundo na posiçao X,Y
             getWorld().addObject(mosca, posX, posY);
         }
@@ -131,6 +144,11 @@ public class Abelha extends Actor
     public void atualizarScore(){
         score += PONTOS;// score = score + pontos
         getWorld().showText("score:" + score, 100, 10);
+    }
+    
+    public void animarAbelha(){
+        indice = (indice + 1) % 4;
+        setImage(imgs[indice]);
     }
 }
 
