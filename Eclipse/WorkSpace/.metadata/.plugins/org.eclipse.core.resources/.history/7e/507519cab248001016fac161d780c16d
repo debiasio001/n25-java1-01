@@ -1,0 +1,14 @@
+package br.com.senaisp.bauru.aula04;
+
+public class Exemplo01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int vlr01 = 10;
+		int vlr02 = vlr01;
+		System.out.println("vlr01: " + vlr01);
+		System.out.println("vlr02: " + vlr02);
+		
+	}
+
+}

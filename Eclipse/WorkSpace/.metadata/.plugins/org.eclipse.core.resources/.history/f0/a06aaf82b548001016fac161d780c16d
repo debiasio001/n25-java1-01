@@ -1,0 +1,19 @@
+package br.com.senaisp.bauru.aula04;
+
+public class Exemplo02 {
+
+	public static void main(String[] args) {
+		String str01 = "Roberto da Silva Sauro";
+		// verificar se há dino no texto
+		System.out.println(str01.contains("da"));
+		//obter a posiçao no texto de u subtexto
+		System.out.println(str01.indexOf("Silva"));
+		//obter o caracter na posiçao desejada
+		System.out.println(str01.charAt(3));
+		// obtendo substring de uma string
+		System.out.println(str01.substring(8));
+		
+		
+	}
+
+}
