@@ -1,0 +1,12 @@
+package br.com.senaisp.bauru.aula05;
+
+import java.util.Scanner;
+
+public class Exemplo07 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite S ou N: ");
+		String res = sc.nextLine();
+		System.out.println("Você digitou " +());
+}
