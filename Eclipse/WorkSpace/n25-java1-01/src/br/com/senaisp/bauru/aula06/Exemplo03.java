@@ -20,16 +20,7 @@ public class Exemplo03 {
 		String continua;
 		do {
 			//mostrando os assentos 
-			System.out.println("Cinema do Povo");
-			System.out.println("  1 2 3 4 5 6 7 8 9");
-			for (int i=0;i<cinema.length;i++) {
-				System.out.print((i+1));// mostrando a fileira 
-				for(int j=0;j<cinema[i].length;j++) {
-					System.out.print(" "+cinema[i][j]);
-				}//fim for j
-				System.out.println();//quebrando a linha
-				
-			}//fim fo i 
+			mostrarTela(cinema);
 			System.out.println("Digite a fileira desejada: ");
 			int fil=sc.nextInt();
 			System.out.println("Digite a poltrona desejada: ");
@@ -45,6 +36,19 @@ public class Exemplo03 {
 		}while(continua.charAt(0)=='S');
 		
 
+	}
+
+	private static void mostrarTela(char[][] cinema) {
+		System.out.println("Cinema do Povo");
+		System.out.println("  1 2 3 4 5 6 7 8 9");
+		for (int i=0;i<cinema.length;i++) {
+			System.out.print((i+1));// mostrando a fileira 
+			for(int j=0;j<cinema[i].length;j++) {
+				System.out.print(" "+cinema[i][j]);
+			}//fim for j
+			System.out.println();//quebrando a linha
+			
+		}//fim fo i 
 	}
 
 }
